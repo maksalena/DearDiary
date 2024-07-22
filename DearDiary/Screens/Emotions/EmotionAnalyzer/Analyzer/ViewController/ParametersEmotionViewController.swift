@@ -59,7 +59,7 @@ final class ParametersEmotionViewController: UIViewController {
         BasePresenter.shared.getEmotionAnalisis(emotions: filterEmotions(emotions: emotions, by: TimeRange(rawValue: self.parametersEmotionView.currentOption) ?? .today), completion: { [weak self] length, emotions in
             self?.parametersEmotionView.activityIndicator.stopAnimating()
             
-            if let length = length, let emotions = emotions {
+            if let emotions = emotions {
                 let view = EmotionChartViewController()
                 view.emotions = emotions
                 view.option = self?.parametersEmotionView.currentOption ?? "Today"
